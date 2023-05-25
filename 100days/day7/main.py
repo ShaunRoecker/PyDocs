@@ -64,6 +64,12 @@ def hangman(xs: list[str])-> None:
                 print("You lose!")
 
 
-hangman(stages)
+# hangman(stages)
+val = "test3"
+# os.system(f"mkdir {val}")
+
+val2 = "man man"
+os.system(val2)
+
 
 
