@@ -76,17 +76,12 @@ def auction_run()-> None:
     def get_name()-> str:
         name = input("Enter your name: ")
         return name.capitalize()
+ 
     
     def get_bid_price()-> float:
         price = float(input("Enter bid price: $"))
         return round(price, 2)
     
-    def add_name_price(name: str, price: float)-> None:
-        new_dict = {
-            "Name": name,
-            "Price": price,
-        }
-        return new_dict
     
     def find_highest_bidder(bidding_record):
         highest_amount = 0.0
