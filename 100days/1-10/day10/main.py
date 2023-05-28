@@ -163,5 +163,129 @@ def calculator():
             calculator()
 
         
-calculator()
+# calculator()
+
+import functools
+import operator
+
+foldleft = lambda fn, acc, xs: functools.reduce(fn, xs, acc)
+
+res3 = foldleft(operator.sub, 0, [1,2,3])
+
+print(res3)
+
+from enum import Enum
+
+
+
+class Direction(Enum):
+    North = 0
+    East = 90
+    South = 180
+    West = 270
+
+print(Direction.North.name) # North
+print(Direction.West.value) # 270
+
+
+import pandas as pd
+
+# Create a Pandas dataframe from the data.
+df = pd.DataFrame({'Data': [10, 20, 30, 20, 15, 30, 45]})
+df2 = pd.DataFrame({'Data2': [101, 201, 301, 201, 151, 301, 451]})
+# Create a Pandas Excel writer using XlsxWriter as the engine.
+writer = pd.ExcelWriter('pandas_simple.xlsx', engine='xlsxwriter')
+
+# Convert the dataframe to an XlsxWriter Excel object.
+df.to_excel(writer, sheet_name='Sheet1')
+df2.to_excel(writer, sheet_name='Sheet2')
+
+# Close the Pandas Excel writer and output the Excel file.
+writer.close()
+
+
+
+from typing import List, TypeVar, NewType, Tuple, Any
+
+
+ID = NewType("ID", int)
+
+some_id = ID(192938920)
+
+print(some_id)
+
+
+tuple: Tuple[str, int] = ("a", 2)
+print(tuple)
+
+
+
+
+from collections.abc import Callable
+
+def higherOrder(fn: Callable[[int], str], num: int)-> str:
+    return f"{fn(num)}!"
+
+
+int_to_string: Callable[[int], str] = lambda x: str(x)
+
+res2 = higherOrder(int_to_string, 42)
+
+print(res2) # 42!
+
+
+
+import time
+
+
+
+list4 = [1, 2, 3, 4, 5, 6, 7, 8]
+index = 4
+
+left, right = list4[:index], list4[index:]
+print(left, right)
+# [1, 2, 3, 4] [5, 6, 7, 8]
+
+
+class List(list):
+    def __init__(self, *args):
+        super().__init__(args)
+
+    
+
+    def map(self, fn):
+        return [fn(i) for i in self]
+
+    def split_at(self, index): 
+        return (self[:index], self[index:])
+    
+    def find_all(self, item: Any)-> List[Any]:
+        return List(filter(lambda x: True if item == x else False, self))
+
+    
+
+a = List(1, 2, 3, 4, 5, 6, 7, 8)
+
+def double(i):
+    return i * 2
+
+print(a.map(double))
+
+
+list_tuple = (l, r) = a.split_at(3)
+
+print(list_tuple) # ([1, 2, 3], [4, 5, 6, 7, 8])
+print(l) # [1, 2, 3]
+print(r) # [4, 5, 6, 7, 8]
+
+
+list5 = List(1, 2, 4, 3 , 42, 3, 42, 45, 42)
+
+found = list5.find_all(42)
+
+print(found) # [42, 42, 42]
+
+
+
+
 
