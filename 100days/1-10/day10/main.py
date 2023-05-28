@@ -251,8 +251,6 @@ class List(list):
     def __init__(self, *args):
         super().__init__(args)
 
-    
-
     def map(self, fn):
         return [fn(i) for i in self]
 
@@ -287,5 +285,28 @@ print(found) # [42, 42, 42]
 
 
 
+tuple2: Tuple[str, int] = ("a", 2)
+print(tuple2)
+
+print(tuple2[1])
+
+def _d(x: int)-> int:
+    x + 3
+
+print(_d(2))
+
+
+df3 = pd.read_excel("pandas_simple.xlsx", header=0)
+# print(df3)
+
+df = pd.DataFrame(
+    {
+        'ColumnA': [10, 20, 30, 20, 15, 30, 45],
+        'ColumnB': [10, 20, 30, 20, 15, 30, 45],
+        'ColumnC': [10, 20, 30, 20, 15, 30, 45],
+    }
+)
+
+print(df)
 
 
