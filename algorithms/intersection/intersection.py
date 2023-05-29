@@ -1,12 +1,10 @@
-from typing import List, TypeVar
-
-T = TypeVar("T")
+from typing import List
 
 
 def intersection(a: list[int], b: list[int])-> list[int]:
     """method to get the intersect of two lists"""
     a, b = sorted(a), sorted(b)
-    inter: list[int] = []
+    inter: List[int] = []
     i, j = 0, 0
     while i < len(a) and j < len(b):
         if a[i] == b[j]:
