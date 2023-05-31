@@ -22,10 +22,10 @@ def intersection(a: list[int], b: list[int])-> list[int]:
 list1 = [1, 6, 2, 9, 6, 3, 5, 11]
 list2 = [7, 7, 9, 8, 2, 3, 12, 4]
 
-print(intersection(list1, list2))
-# [2, 3, 9]
 
 
 
-
-        
+if __name__ == '__main__':
+    
+    print(intersection(list1, list2)) # [2, 3, 9]
+ 
