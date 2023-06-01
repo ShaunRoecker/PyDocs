@@ -28,4 +28,6 @@ list2 = [7, 7, 9, 8, 2, 3, 12, 4]
 if __name__ == '__main__':
     
     print(intersection(list1, list2)) # [2, 3, 9]
+    
+
  
