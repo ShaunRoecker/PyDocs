@@ -1,6 +1,6 @@
 import decimal
 from decimal import Decimal
-
+import math
 
 # decimals 
 # Decimals have a context that controls certain aspects of working with decimals
@@ -93,6 +93,42 @@ print(a + b)
 
 # ****Dont create Decimals from floats*****
 # create a string before passing to Decimal
+
+
+
+decimal.getcontext().prec = 28
+x = 0.01
+x_dec = Decimal('0.01')
+root = math.sqrt
+
+
+# Div and Mod operators with Decimals
+
+x = 10
+y = 3
+
+print(x//y, x%y)  # 3  1
+print(divmod(x, y)) # (3, 1)
+print(x == y * (x//y) + (x%y)) # True
+
+a = Decimal(str(0.1))
+
+print(a) # 0.1
+
+print(format(a, '.35f')) # 0.10000000000000000000000000000000000
+
+
+
+x = 2
+x_dec = Decimal(2)
+
+root_float = math.sqrt(x)
+root_mixed = math.sqrt(x_dec)
+root_dec = x_dec.sqrt()
+
+print(format(root_float, '1.27f'))
+print(format(root_mixed, '1.27f'))
+print(root_dec)
 
 
 
