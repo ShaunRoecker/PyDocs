@@ -9,9 +9,11 @@ def bubble_sort(xs: list[int])-> list[int]:
     for k in range(1, n - 1):
         for j in range(0, n - k):
             if xs[j] > xs[j + 1]:
-                temp = xs[j]      # <-- swapping xs[j] & xs[j + 1]
-                xs[j] = xs[j + 1]  # <-
-                xs[j + 1] = temp    # <- 
+                # temp = xs[j]      # <-- swapping xs[j] & xs[j + 1]
+                # xs[j] = xs[j + 1]  
+                # xs[j + 1] = temp     
+                xs[j], xs[j + 1] = xs[j + 1], xs[j]  # <-- new knowlege
+
     return xs
 
 
