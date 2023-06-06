@@ -86,12 +86,16 @@ def log(msg, *, dt=None):
 #  the collection each time it is called.
 
 def add_item(name, quantity, unit=1, grocery_list=None):
+    """
+    method to add an item to a provided list. If no list provided,
+    a list is created.
+    """
     if not grocery_list:
         grocery_list = []
     grocery_list.append(f"{name} ({quantity} {unit})")
     return grocery_list
 
 
-
+print(add_item.__doc__)
 
 
